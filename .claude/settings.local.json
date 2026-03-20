@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pdflatex -interaction=nonstopmode hispanic_generations_flowchart.tex)",
+      "Bash(magick -density 300 hispanic_generations_flowchart.pdf -quality 95 hispanic_generations_flowchart.png)"
+    ]
+  }
+}

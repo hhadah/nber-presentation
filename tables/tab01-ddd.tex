@@ -1,0 +1,36 @@
+\begin{table}[H]
+\centering\centering
+\caption{DDD \label{tab:DDD}}
+\centering
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{
+\begin{threeparttable}
+\begin{tabular}[t]{lccccc}
+\toprule
+  & \specialcell{(1) \\ All Gens \\ $H_{ist}$} & \specialcell{(2) \\ First Gen \\ $H_{ist}$} & \specialcell{(3) \\ Second Gens \\ $H_{ist}$} & \specialcell{(4) \\ Third Gens \\ $H_{ist}$} & \specialcell{(5) \\ Fourth Gens+ \\ $H_{ist}$}\\
+\midrule
+Post Treatment Year & -0.011 & 0.009 & -0.013 & 0.011 & -0.045\\
+ & (0.011) & (0.012) & (0.012) & (0.031) & (0.049)\\
+\midrule
+Observations & 959,920 & 102,893 & 582,030 & 171,236 & 103,761\\
+Year-State FEs & X & X & X & X & X\\
+Type-Year FEs & X & X & X & X & X\\
+Type-State FEs & X & X & X & X & X\\
+County FEs & X & X & X & X & X\\
+\bottomrule
+\multicolumn{6}{l}{\rule{0pt}{1em}* p $<$ 0.1, ** p $<$ 0.05, *** p $<$ 0.01}\\
+\end{tabular}
+\begin{tablenotes}
+\small
+\item[1] \footnotesize{Each column is the results of the extended two-way fixed effects estimation. 
+                      Standard errors are clustered on the state level and all regressions include
+                      State-Year, State-Type, Type-Year, and County FEs.}
+\item[2] \footnotesize{The samples include first, second, third, and fourth+ generation Hispanic children ages 17 and below who live in intact families. 
+                      A first-generation Hispanic child is one that is born in a Spanish-speaking country. 
+                      A second-generation Hispanic child is one that is born in the United States with at least one parent born in a Spanish-speaking country.
+                      Third-generation Hispanic immigrant children are native-born with native-born parents and at least one grandparent is born in a Spanish-speaking country.
+                      country.
+                      Fourth-generation+ are native born with native-born parents, all grandparents are born in the United States, and one parent self-reported Hispanic identity.}
+\item[3] \footnotesize{Data source is the 1994-2019 Current Population Survey.}
+\end{tablenotes}
+\end{threeparttable}}
+\end{table}

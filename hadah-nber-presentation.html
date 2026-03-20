@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Immigration Enforcement and Hispanic Identity</title>
+    <meta charset="utf-8" />
+    <script src="hadah-nber-presentation_files/header-attrs/header-attrs.js"></script>
+    <link href="hadah-nber-presentation_files/remark-css/default.css" rel="stylesheet" />
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { equationNumbers: { autoNumber: "AMS" } },
+      });
+    </script>
+    <style>
+    .mjx-mrow a {
+      color: black;
+      pointer-events: none;
+      cursor: default;
+    }
+    </style>
+    <link rel="stylesheet" href="assets/tulane-fonts.css" type="text/css" />
+    <link rel="stylesheet" href="assets/tulane.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+.title[
+# Immigration Enforcement and Hispanic Identity
+]
+.author[
+### Hussain Hadah<sup>1,2</sup> and Augustine Denteh<sup>3</sup>
+<br>
+<div style="text-align: center; font-size: 0.8em; margin-top: 10px;">
+<p><sup>1</sup>The Murphy Institute, <sup>2</sup>Economics Department, Tulane University, <sup>3</sup>Department of Economics, Davidson College</p>
+</div>
+]
+.date[
+### March 20 2026
+]
+
+---
+
+layout: true
+&lt;div style="position: absolute;left:20px;bottom:5px;color:black;font-size: 12px;"&gt;Hussain Hadah (Tulane/Murphy Institute) | Immigration Enforcement and Hispanic Identity  | NBER March 20 2026&lt;/div&gt;
+
+&lt;!---  | 20 March 2026--&gt;
+
+---
+
+
+
+
+
+
+
+
+&lt;style type="text/css"&gt;
+    /* Table width = 100% max-width */
+
+    .remark-slide table{
+        width: auto !important; /* Adjusts table width */
+    }
+
+    /* Change the background color to white for shaded rows (even rows) */
+
+    .remark-slide thead, .remark-slide tr:nth-child(2n) {
+        background-color: white;
+    }
+    .remark-slide thead, .remark-slide tr:nth-child(n) {
+        background-color: white;
+    }
+&lt;/style&gt;
+## Hispanics are the largest minority group in the U.S.
+
+&lt;br&gt;
+
+- ### The 2020 Census counted 62 million Hispanics (19&amp;#37; of the population)
+
+&lt;br&gt;
+
+- #### Nearly all studies of Hispanic outcomes rely on .brand-crawfest[self-reported Hispanic identity]
+
+  - .font70[This implicitly treats Hispanic identity as a fixed/exogenous characteristic of individuals with a Hispanic origin]
+
+&lt;br&gt;
+
+--
+- ### .brand-crawfest[**But what if endogenous self-reported Hispanic identity is influenced by external factors?**]
+
+---
+## Endogenous Hispanic and ethnic attrition is a well-documented phenomenon
+
+.pull-left-narrow[
+
+US-born descendants of Hispanic immigrants tend to self-identify as non-Hispanic .font50[.gray[**(Duncan and Trejo
+2007, 2011, 2017; Antman, Duncan, and Trejo 2020b)**]]
+]
+
+.pull-right-wide[
+&lt;img src="hadah-nber-presentation_files/figure-html/plot1-1.png" alt="" width="80%" style="display: block; margin: auto 0 auto auto;" /&gt;
+]
+
+---
+## What causes Hispanic attrition?
+
+- Correlates of ethnic attrition are well documented:
+  - .brand-crawfest[**Intermarriage**]: primary driver; children of interethnic marriages are far more likely to attrit .font50[.gray[**(Duncan and Trejo 2011)**]]
+  - .brand-crawfest[**Socioeconomic status**]: attritors are more educated, higher income .font50[.gray[**(Duncan
+and Trejo 2011, 2017)**]]
+  - .brand-crawfest[**Local prejudice**]: State-level anti-Hispanic bias reduces Hispanic identity .font50[.gray[**(Hadah 2024)**]]
+    - State-level bias is measured based on Implicit Association Test data
+
+- .brand-crawfest[**Open question: Can policies that disproportionately affect Hispanics causally change ethnic self-identification?**]
+
+---
+## Significant US immigration enforcement since the mid-2000s
+
+- The US spends about &amp;#36;25 billion annually on immigration enforcement .font50[.gray[**(American Immigration Council, 2021)**]]
+  - .font70[Mostly funds the U.S. Customs and Border Protection (CBP) and U.S. Immigration and Customs Enforcement (ICE)]
+
+&lt;br&gt;
+
+- The stated goal of ICE is to "protect America through criminal investigations and enforcing immigration laws to preserve national security and public safety"
+
+&lt;br&gt;
+
+- Immigration enforcement remains an active public policy and political issue, potentially creating "chilling effects" among immigrant communities
+
+  - .font70[51&amp;#37; of immigrant Latinos "worry that they, a family member or someone close to them could be deported" .font50[.gray[**(Pew Research Center 2021)**]]]
+
+---
+name: motivation
+
+## What we study in this paper
+
+&lt;br&gt;
+
+- Policy context: .brand-crawfest[**Secure Communities (SC)**]
+  - Automated fingerprint sharing between local police and federal immigration authorities .tiny[[[Secure Communities background]](#app-sc-background) [[How SC works]](#app-sc-work)]
+&lt;br&gt;
+
+- Growing literature documents *spillover effects* on Hispanic community
+  - Safety net participation, poverty, engagement with institutions .font50[.gray[**(Watson 2014; Amuedo-Dorantes, Arenas-Arroyo, and Sevilla 2018; Dee and Murphy 2020; Alsan and Yang 2024)**]]
+
+&lt;br&gt;
+
+- .brand-crawfest[**Does immigration enforcement (Secure Communities) change who identifies/self-reports as Hispanic?**]
+
+---
+name: sc-rollout
+
+## Staggered rollout of Secure Communities
+
+.center[
+&lt;img src="figures/sc_removal.png" width="85%"/&gt;
+]
+
+.footnotesize[Share of counties with SC (left axis) and monthly removals (right axis), 2008--2013.] .tiny[[[SC facts]](#app-sc-facts)]
+
+---
+class: inverse, center, middle
+
+# Measuring Hispanic Identity
+
+---
+## Who's Hispanic? The Hispanic origin question in the CPS
+
+- Since 2003, CPS asks: "Are you Spanish, Hispanic, or Latino?"
+  - If YES, "Are you Mexican, Mexican-American, Chicano, Puerto Rican, Cuban, Cuban-American, or some other Spanish, Hispanic, or Latino group?"
+  - Coded into major groups: "Hispanic or Latino" and "Not Hispanic or Latino."
+
+- Previous studies argue that these questions reflect "self-identification" (i.e., subjective and endogenous measure)
+
+- So-called "objective" indicators of Hispanic descent have been proposed .font50[.gray[**(e.g., Duncan and Trejo (2007; 2009; 2011), and Antman, Duncan, and Trejo (2020b))**]]
+
+---
+name: objective-measures
+
+## An objective measure of Hispanic descent: Hispanic identity generations
+
+
+.center[
+&lt;img src="more_slides_material/hispanic_generations_flowchart.png" width="65%"/&gt;
+.tiny[[[Example 1]](#who-are-generations-ex1) [[Example 2]](#who-are-generations-ex2)]
+]
+
+
+---
+## Why does Hispanic attrition matter?
+
+&gt; **Certainly, the apparent extent of such ethnic attrition ... creates the potential for .brand-crawfest[endogenous ethnicity] to affect our inferences about the progress of Mexican Americans.** .font50[.gray[**(Duncan and Trejo 2011)**]]
+
+- If Hispanic attritors are positively selected,
+  - conventional estimates overstate Hispanic health disparities .font50[.gray[**(Antman, Duncan, and Trejo (2016; 2020b))**]]
+  - standard measures understate intergenerational educational progress .font50[.gray[**(Duncanand Trejo 2011, 2017)**]]
+
+---
+## But how would SC impact self-reporting of Hispanic identity?
+
+- SC may increase the salience and expected costs of being treated as Hispanic
+- Two competing channels:
+  1. .brand-crawfest[**Attrition channel**]: increased expected penalty `\(\Rightarrow\)` individuals distance from Hispanic identity to reduce perceived exposure
+  2. .brand-crawfest[**Reactive identity channel**]: heightened threat `\(\Rightarrow\)` increased value of in-group attachment and solidarity
+
+- Net effect is .brand-crawfest[**theoretically ambiguous**] and likely .brand-crawfest[**heterogeneous**]
+  - Depends on switching costs, perceived exposure, generational ties
+
+---
+name: data-sample
+
+## Data and sample
+
+- Current Population Survey (CPS), 2003 to 2013
+  - Self-reported Hispanic origin, race, ancestry, parental birthplace .tiny[[[Summary statistics](#app-summary)]]
+
+- **Sample**: White children under 18 living with parents
+  - Focus on White families: lower switching costs, more feasible to "pass"
+  - Focus on children lets us define objective Hispanic indicators beyond 2nd gen
+  - Parental reporting tends to understate rather than exaggerate ethnic attrition .font50[.gray[**(Antman, Duncan, and Trejo (2020a))**]]
+
+- **Outcome**: Self-reported Hispanic identity across ancestry-based Hispanic identity generations
+
+---
+## Empirical Strategy
+
+- Event study model with unrestricted treatment effect heterogeneity .font50[.gray[**(Borusyak, Jaravel, and Spiess (2024))**]]:
+
+$$
+`\begin{equation}
+Y_{icst} = \lambda_c + \gamma_t + X_{icst}^{\prime} \delta + D_{icst}\tau_{icst} + \varepsilon_{icst} \nonumber
+\end{equation}`
+$$
+
+- Imputation procedure (3 steps):
+  1. Estimate `\(\hat{\lambda}_c, \hat{\gamma}_t, \hat{\delta}\)` using untreated observations only
+  2. Impute counterfactual: `\(\hat{Y}_{icst}(0)\)`; compute `\(\hat{\tau}_{icst} = Y_{icst} - \hat{Y}_{icst}(0)\)`
+  3. Aggregate into horizon-specific ATTs: `\(\hat{\tau}_h\)`
+
+---
+## Main results: SC reduces Hispanic identity
+
+.pull-left[
+.center[
+**All Generations**
+
+&lt;img src="figures/plot06-all-hisp-hispan.png" width="100%"/&gt;
+Overall ATT: .red[&amp;minus;5.9 pp (6.4&amp;#37;)]
+]
+]
+
+.pull-right[
+.center[
+**First Generation**
+
+&lt;img src="figures/plot01-firstgen-hispan.png" width="100%"/&gt;
+
+First gen: .red[&amp;minus;22.9 pp (23.7&amp;#37;)]
+]
+]
+
+
+---
+## Heterogeneity by generation
+
+.pull-left[
+.center[
+**Second Generation**
+
+&lt;img src="figures/plot02-secondgen-hispan.png" width="100%"/&gt;
+Second gen: .blue[+6.9 pp] (solidarity response)
+]
+]
+
+.pull-right[
+.center[
+**Third Generation**
+
+&lt;img src="figures/plot03-thirdgen-hispan.png" width="100%"/&gt;
+Third gen: .red[&amp;minus;9.3 pp] (attrition)
+
+]
+]
+
+
+---
+## Second-generation results driven by interethnic families
+
+.pull-left[
+.center[
+**Hispanic Father, non-Hispanic White Mother**
+
+&lt;img src="figures/plot17-secondgen-HW-hispan.png" width="100%"/&gt;
+]
+]
+
+.pull-right[
+.center[
+**non-Hispanic White Father, Hispanic Mother**
+
+&lt;img src="figures/plot18-secondgen-WH-hispan.png" width="100%"/&gt;
+]
+]
+
+.footnotesize[Positive effect driven by children with Hispanic fathers and non-Hispanic white mothers.]
+
+---
+## Summary of main findings and generational divergence
+
+- **First generation**: Reduced Hispanic identity, although they have strong ties to Hispanic ancestry (attrition channel dominates)
+
+- **Second generation**: Increased Hispanic identity, indicating solidarity response
+  - Consistent with backlash against forced assimilation .font50[.gray[**(Fouka (2020))**]]
+
+- **Third generation**: Reduced Hispanic identity. More distant ties with higher baseline attrition, attrition channel dominates
+
+---
+## Heterogeneity by parental education
+
+.pull-left[
+.center[
+**All Generations**
+
+&lt;img src="figures/plot41-sep_paredu__all.png" width="100%"/&gt;
+]
+]
+
+.pull-right[
+.center[
+**First Generation**
+
+&lt;img src="figures/plot42-sep_paredu__first.png" width="100%"/&gt;
+]
+]
+
+---
+## Heterogeneity by parental education (continued)
+
+.pull-left[
+.center[
+**Second Generation**
+
+&lt;img src="figures/plot43-sep_paredu__second.png" width="100%"/&gt;
+]
+]
+
+.pull-right[
+.center[
+**Third Generation**
+
+&lt;img src="figures/plot44-sep_paredu__third.png" width="100%"/&gt;
+]
+]
+
+---
+## Placebo: Fourth-generation Black children
+
+.center[
+&lt;img src="figures/plot07-blk.png" width="70%"/&gt;
+]
+
+---
+## Robustness: Excluding border counties
+
+.pull-left[
+.center[
+**All Generations**
+
+&lt;img src="figures/plot33-all-hisp-hispan-robustness.png" width="100%"/&gt;
+]
+]
+
+.pull-right[
+.center[
+**First Generation**
+
+&lt;img src="figures/plot28-firstgen-hispan-robustness.png" width="100%"/&gt;
+]
+]
+
+.footnotesize[Excluding southern border counties and NY, MA, IL. Results unchanged.]
+
+---
+## Conclusion
+
+- Immigration enforcement causally changes Hispanic ethnic self-identification
+
+- Enforcement operates through dual channels:
+  - **Attrition**: 1st and 3rd generation families retreat from Hispanic identity
+  - **Solidarity response**: 2nd generation families increase identification (driven by interethnic families)
+
+- Methodological implication: Self-reported Hispanic identity in evaluations of immigration enforcement may systematically bias causal inference
+
+---
+class: tulane-blue
+background-image: url(assets/TulaneLogo-white.svg)
+background-size: 260px
+background-position: 5% 95%
+count:false
+
+# Thank you!
+
+.pull-right[.pull-down[
+
+&lt;a href="mailto:hhadah@tulane.edu"&gt;
+.white[&lt;svg viewBox="0 0 512 512" style="height:1em;position:relative;display:inline-block;top:.1em;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M440 6.5L24 246.4c-34.4 19.9-31.1 70.8 5.7 85.9L144 379.6V464c0 46.4 59.2 65.5 86.6 28.6l43.8-59.1 111.9 46.2c5.9 2.4 12.1 3.6 18.3 3.6 8.2 0 16.3-2.1 23.6-6.2 12.8-7.2 21.6-20 23.9-34.5l59.4-387.2c6.1-40.1-36.9-68.8-71.5-48.9zM192 464v-64.6l36.6 15.1L192 464zm212.6-28.7l-153.8-63.5L391 169.5c10.7-15.5-9.5-33.5-23.7-21.2L155.8 332.6 48 288 464 48l-59.4 387.3z"&gt;&lt;/path&gt;&lt;/svg&gt; hhadah@tulane.edu]
+&lt;/a&gt;
+
+&lt;a href="https://hussainhadah.com/"&gt;
+.white[&lt;svg viewBox="0 0 512 512" style="height:1em;position:relative;display:inline-block;top:.1em;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"&gt;&lt;/path&gt;&lt;/svg&gt; https://hussainhadah.com/]
+&lt;/a&gt;
+
+&lt;a href="https://github.com/hhadah"&gt;
+.white[&lt;svg viewBox="0 0 496 512" style="height:1em;position:relative;display:inline-block;top:.1em;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"&gt;&lt;/path&gt;&lt;/svg&gt; @hhadah]
+&lt;/a&gt;
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+
+]]
+
+---
+class: segue-yellow
+background-image: url("assets/TulaneLogo.svg")
+background-size: 20%
+background-position: 95% 95%
+count:false
+
+# Appendix
+
+---
+name: app-sc-background
+count:false
+
+## Background: Secure Communities
+
+- Deportation program relying on partnerships between federal and local law enforcement agencies to identify and remove criminal aliens from the US
+- Secure Communities has a checked history
+  - 2008: Started as pilot program under the George W. Bush
+  - Program authorized and expanded under Barack Obama, reaching all U.S. counties by end of 2013
+  - 2014: Replaced by a "Priority Enforcement Program"
+  - 2017: Reactivated in original form by Donald Trump
+  - 2021: Joe Biden discontinued Secure Communities
+  - 2025: Donald Trump reinstated Secure Communities
+
+.tiny[.small[[[Back](#motivation)]]]
+
+---
+name: app-sc-work
+count:false
+
+## How Secure Communities works
+
+- Prior to SC: identifying deportable non-citizens relied on manual interviews (e.g., 287(g) agreements)
+- SC automated this process:
+  1. Local police arrest individual `\(\rightarrow\)` submit fingerprints to FBI
+  2. Fingerprints *automatically* forwarded to DHS biometric database
+  3. If match found `\(\rightarrow\)` ICE reviews immigration status
+  4. If violation identified `\(\rightarrow\)` ICE issues detainer (hold up to 48 hours)
+
+.tiny[.small[[[Back](#motivation)]]]
+
+---
+name: app-sc-facts
+count:false
+
+## Key facts about Secure Communities
+
+- Rollout timing correlated with proximity to Mexican border and local Hispanic population size .font50[.gray[**(Miles and Cox 2014)**]]
+- Between inception and 2014:
+  - 46 million fingerprint submissions
+  - 2.3 million removable alien identifications
+  - ~440,000 deportations
+  - More than 90&amp;#37; of the deportees were Hispanic men (Mexico and other Central and South American countries)
+
+.tiny[.small[[[Back](#sc-rollout)]]]
+
+---
+name: who-are-generations-ex1
+count: false
+
+## Who are these generations?
+
+.pull-left[
+.center[
+&lt;img src="more_slides_material/Andy_Garcia.jpg" width="150px"/&gt;
+
+**Andy Garcia (Actor)**
+
+.font70[
+**Andy**: born in Cuba (naturalized US citizen)&lt;br&gt;
+**Mother**: Amelie Menendez (Born in Cuba)&lt;br&gt;
+**Father**: Rene Garcia Nunez (Born in Cuba)
+]
+
+.bold[.orange[1st Generation]]
+]
+]
+
+.pull-right[
+.center[
+&lt;img src="more_slides_material/George_P_Bush.png" width="150px"/&gt;
+
+**George Prescott Bush (Commissioner, Texas General Land Office: 2015-2023)**
+
+.font70[
+**George**: born in Houston, Texas&lt;br&gt;
+**Mother**: Columba Bush (Born in Mexico)&lt;br&gt;
+**Father**: Jeb Bush (born in Midland, Texas)
+]
+
+.bold[.brand-crawfest[2nd Generation]]
+]
+]
+
+.tiny[[[Back](#objective-measures)]]
+
+---
+name: who-are-generations-ex2
+count: false
+
+## Who are these generations?
+
+.center[
+&lt;img src="more_slides_material/Ted_Williams.png" width="150px"/&gt;
+
+**Ted Williams**
+
+.font70[
+**Ted**: born in San Diego, California&lt;br&gt;
+**Mother**: May Venzor (born in Texas)&lt;br&gt;
+**Father**: Samuel Williams (born in New York)&lt;br&gt;
+**Both maternal grandparents**: born in Mexico
+]
+
+.bold[.brand-green[3rd Generation]]
+]
+
+.tiny[[[Back](#objective-measures)]]
+
+---
+name: app-summary
+count:false
+
+## Summary statistics
+
+.font70[
+
+|  | **All** | **1st Gen** | **2nd Gen** | **3rd Gen** |
+|:--|:--:|:--:|:--:|:--:|
+|  | (N=465,480) | (N=55,239) | (N=317,032) | (N=93,209) |
+| Hispanic identity | 0.920 | 0.969 | 0.940 | 0.825 |
+| Female | 0.485 | 0.486 | 0.484 | 0.485 |
+| Age | 8.5 | 11.6 | 8.1 | 7.7 |
+| Hispanic mother | 0.897 | 0.958 | 0.926 | 0.766 |
+| Hispanic father | 0.884 | 0.944 | 0.916 | 0.749 |
+| Frac. Hispanic in county | 0.332 | 0.303 | 0.339 | 0.328 |
+
+]
+
+.footnotesize[Note: CPS 2003--2013. White children ages &amp;le; 17] 
+
+.tiny[.pull-right[.small[[[Back](#data-sample)]]]]
+
+
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script src="assets/remark-zoom.js"></script>
+<script src="https://platform.twitter.com/widgets.js"></script>
+<script>var slideshow = remark.create({
+  "highlightStyle": "github",
+  "highlightLines": true,
+  "countIncrementalSlides": false,
+  "ratio": "16:9",
+  "navigation": {
+    "scroll": false
+  }
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
