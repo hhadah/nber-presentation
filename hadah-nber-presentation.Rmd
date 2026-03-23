@@ -14,7 +14,7 @@ output:
     self_contained: false # if true, fonts will be stored locally
     seal: true # show a title slide with YAML information
     includes:
-      in_header: "assets/mathjax-equation-numbers.html"
+      in_header: ["assets/mathjax-equation-numbers.html", "assets/mermaid-init.html"]
     nature:
       beforeInit: ["assets/remark-zoom.js", "https://platform.twitter.com/widgets.js"]
       highlightStyle: github
@@ -25,7 +25,7 @@ output:
         scroll: false # disable slide transitions by scrolling
 ---
 layout: true
-<div style="position: absolute;left:20px;bottom:5px;color:black;font-size: 12px;">Hussain Hadah (Tulane/Murphy Institute) | Immigration Enforcement and Hispanic Identity  | NBER `r format(Sys.time(), '%B %d %Y')`</div>
+<div style="position: absolute;left:20px;bottom:5px;color:black;font-size: 12px;">Hussain Hadah (Murphy Institute/Tulane) | Immigration Enforcement and Hispanic Identity  | NBER `r format(Sys.time(), '%B %d %Y')`</div>
 
 <!--- `r rmarkdown::metadata$subtitle` | `r format(Sys.time(), '%d %B %Y')`-->
 
@@ -155,11 +155,11 @@ cbbPalette <- c("#000000", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2"
         background-color: white;
     }
 ```
-## Hispanics are the largest minority group in the U.S.
+## The Hispanic and Latino populations are the largest minority groups in the U.S.
 
 <br>
 
-- ### The 2020 Census counted 62 million Hispanics (19&#37; of the population)
+- #### The 2020 Census counted 62 million Hispanics (19&#37; of the population)
 
 <br>
 
@@ -170,15 +170,28 @@ cbbPalette <- c("#000000", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2"
 <br>
 
 --
-- ### .brand-crawfest[**But what if endogenous self-reported Hispanic identity is influenced by external factors?**]
+- #### .brand-crawfest[**But what if endogenous self-reported Hispanic identity is influenced by external factors?**]
 
 ---
+## Who's Hispanic? The Hispanic origin question in the CPS
+
+- Since 2003, CPS asks: "Are you Spanish, Hispanic, or Latino?"
+  - If YES, "Are you Mexican, Mexican-American, Chicano, Puerto Rican, Cuban, Cuban-American, or some other Spanish, Hispanic, or Latino group?"
+  - Coded into major groups: "Hispanic or Latino" and "Not Hispanic or Latino."
+
+- Previous studies argue that these questions reflect "self-identification" (i.e., subjective and endogenous measure)
+
+- So-called "objective" indicators of Hispanic descent have been proposed .font50[.gray[**(e.g., Duncan and Trejo (2007; 2009; 2011), and Antman, Duncan, and Trejo (2020b))**]]
+
+---
+name: endogenous-attrition-plot
+
 ## Endogenous Hispanic and ethnic attrition is a well-documented phenomenon
 
 .pull-left-narrow[
 
 US-born descendants of Hispanic immigrants tend to self-identify as non-Hispanic .font50[.gray[**(Duncan and Trejo
-2007, 2011, 2017; Antman, Duncan, and Trejo 2020b)**]]
+2007, 2011, 2017; Antman, Duncan, and Trejo 2020b)**]] .tiny[[[Objective vs. subjective Hispanic identity]](#app-objective-vs-subjective)]
 ]
 
 .pull-right-wide[
@@ -201,23 +214,11 @@ and Trejo 2011, 2017)**]]
   - .brand-crawfest[**Local prejudice**]: State-level anti-Hispanic bias reduces Hispanic identity .font50[.gray[**(Hadah 2024)**]]
     - State-level bias is measured based on Implicit Association Test data
 
+- If Hispanic attritors are positively selected,
+  - conventional estimates overstate Hispanic health disparities .font50[.gray[**(Antman, Duncan, and Trejo (2016; 2020b))**]]
+  - standard measures understate intergenerational educational progress .font50[.gray[**(Duncanand Trejo 2011, 2017)**]]
+
 - .brand-crawfest[**Open question: Can policies that disproportionately affect Hispanics causally change ethnic self-identification?**]
-
----
-## Significant US immigration enforcement since the mid-2000s
-
-- The US spends about &#36;25 billion annually on immigration enforcement .font50[.gray[**(American Immigration Council, 2021)**]]
-  - .font70[Mostly funds the U.S. Customs and Border Protection (CBP) and U.S. Immigration and Customs Enforcement (ICE)]
-
-<br>
-
-- The stated goal of ICE is to "protect America through criminal investigations and enforcing immigration laws to preserve national security and public safety"
-
-<br>
-
-- Immigration enforcement remains an active public policy and political issue, potentially creating "chilling effects" among immigrant communities
-
-  - .font70[51&#37; of immigrant Latinos "worry that they, a family member or someone close to them could be deported" .font50[.gray[**(Pew Research Center 2021)**]]]
 
 ---
 name: motivation
@@ -240,7 +241,7 @@ name: motivation
 ---
 name: sc-rollout
 
-## Staggered rollout of Secure Communities
+## Cumulative share of counties activating Secure Communities, and monthly removals, 2008--2013
 
 .center[
 <img src="figures/sc_removal.png" width="85%"/>
@@ -249,41 +250,48 @@ name: sc-rollout
 .footnotesize[Share of counties with SC (left axis) and monthly removals (right axis), 2008--2013.] .tiny[[[SC facts]](#app-sc-facts)]
 
 ---
-class: inverse, center, middle
-
-# Measuring Hispanic Identity
-
----
-## Who's Hispanic? The Hispanic origin question in the CPS
-
-- Since 2003, CPS asks: "Are you Spanish, Hispanic, or Latino?"
-  - If YES, "Are you Mexican, Mexican-American, Chicano, Puerto Rican, Cuban, Cuban-American, or some other Spanish, Hispanic, or Latino group?"
-  - Coded into major groups: "Hispanic or Latino" and "Not Hispanic or Latino."
-
-- Previous studies argue that these questions reflect "self-identification" (i.e., subjective and endogenous measure)
-
-- So-called "objective" indicators of Hispanic descent have been proposed .font50[.gray[**(e.g., Duncan and Trejo (2007; 2009; 2011), and Antman, Duncan, and Trejo (2020b))**]]
-
----
 name: objective-measures
 
-## An objective measure of Hispanic descent: Hispanic identity generations
+## Objective Hispanic Identity Generations
+
+<div style="width: 90%; margin: 0 auto; text-align: center;">
+
+<div class="mermaid mermaid-compact">
+graph LR
+  %% Node Definitions
+  Start("Are the child and both parents <br/> born in a Latin-American country?")
+
+  Gen1("<b>1st Generation</b><br/>Foreign-born child<br/><small>Self-reported Hispanic: ~97%</small>")
+  style Gen1 fill:#ff6600,stroke:#333,stroke-width:2px,color:#fff
+
+  Q2("Does the US-born child have <br/> at least one parent born in a <br/> Latin-American country?")
+
+  Gen2("<b>2nd Generation</b><br/>U.S.-born child, <br/>foreign-born parent(s)<br/><small>Self-reported Hispanic: ~94%</small>")
+  style Gen2 fill:#2e8b57,stroke:#333,stroke-width:2px,color:#fff
+
+  Q3("Is at least one grandparent born <br/> in a Latin-American country?")
+
+  Gen3("<b>3rd Generation</b><br/>U.S.-born child & parents, <br/>foreign-born grandparent(s)<br/><small>Self-reported Hispanic: ~83%</small>")
+  style Gen3 fill:#4b0082,stroke:#333,stroke-width:2px,color:#fff
+
+  %% Flow Logic
+  Start -- "Yes" --> Gen1
+  Start -- "No" --> Q2
+
+  Q2 -- "Yes" --> Gen2
+  Q2 -- "No" --> Q3
+
+  Q3 -- "Yes" --> Gen3
+</div>
+
+</div>
 
 
 .center[
-<img src="more_slides_material/hispanic_generations_flowchart.png" width="65%"/>
-.tiny[[[Example 1]](#who-are-generations-ex1) [[Example 2]](#who-are-generations-ex2)]
+.tiny[[[Latin-American countries used]](#app-countries) [[Example 1]](#who-are-generations-ex1) [[Example 2]](#who-are-generations-ex2)]
 ]
 
 
----
-## Why does Hispanic attrition matter?
-
-> **Certainly, the apparent extent of such ethnic attrition ... creates the potential for .brand-crawfest[endogenous ethnicity] to affect our inferences about the progress of Mexican Americans.** .font50[.gray[**(Duncan and Trejo 2011)**]]
-
-- If Hispanic attritors are positively selected,
-  - conventional estimates overstate Hispanic health disparities .font50[.gray[**(Antman, Duncan, and Trejo (2016; 2020b))**]]
-  - standard measures understate intergenerational educational progress .font50[.gray[**(Duncanand Trejo 2011, 2017)**]]
 
 ---
 ## But how would SC impact self-reporting of Hispanic identity?
@@ -374,7 +382,7 @@ Third gen: .red[&minus;9.3 pp] (attrition)
 
 
 ---
-## Second-generation results driven by interethnic families
+## Increased self-identification of Second-generation driven by Hispanic-father led households
 
 .pull-left[
 .center[
@@ -391,18 +399,6 @@ Third gen: .red[&minus;9.3 pp] (attrition)
 <img src="figures/plot18-secondgen-WH-hispan.png" width="100%"/>
 ]
 ]
-
-.footnotesize[Positive effect driven by children with Hispanic fathers and non-Hispanic white mothers.]
-
----
-## Summary of main findings and generational divergence
-
-- **First generation**: Reduced Hispanic identity, although they have strong ties to Hispanic ancestry (attrition channel dominates)
-
-- **Second generation**: Increased Hispanic identity, indicating solidarity response
-  - Consistent with backlash against forced assimilation .font50[.gray[**(Fouka (2020))**]]
-
-- **Third generation**: Reduced Hispanic identity. More distant ties with higher baseline attrition, attrition channel dominates
 
 ---
 ## Heterogeneity by parental education
@@ -443,32 +439,27 @@ Third gen: .red[&minus;9.3 pp] (attrition)
 ]
 
 ---
-## Placebo: Fourth-generation Black children
+## Placebo and robustness
 
-.center[
-<img src="figures/plot07-blk.png" width="70%"/>
-]
+<div style="display: flex; gap: 18px; align-items: flex-start;">
+  <div style="flex: 1; text-align: center;">
+    <div><strong>Placebo</strong></div>
+    <div class="font80">Fourth-generation Black children</div>
+    <img src="figures/plot07-blk.png" width="100%"/>
+  </div>
+  <div style="flex: 1; text-align: center;">
+    <div><strong>Robustness</strong></div>
+    <div class="font80">All Generations</div>
+    <img src="figures/plot33-all-hisp-hispan-robustness.png" width="100%"/>
+  </div>
+  <div style="flex: 1; text-align: center;">
+    <div><strong>Robustness</strong></div>
+    <div class="font80">First Generation</div>
+    <img src="figures/plot28-firstgen-hispan-robustness.png" width="100%"/>
+  </div>
+</div>
 
----
-## Robustness: Excluding border counties
-
-.pull-left[
-.center[
-**All Generations**
-
-<img src="figures/plot33-all-hisp-hispan-robustness.png" width="100%"/>
-]
-]
-
-.pull-right[
-.center[
-**First Generation**
-
-<img src="figures/plot28-firstgen-hispan-robustness.png" width="100%"/>
-]
-]
-
-.footnotesize[Excluding southern border counties and NY, MA, IL. Results unchanged.]
+.footnotesize[Robustness estimates exclude southern border counties and NY, MA, and IL. Results remain unchanged.]
 
 ---
 ## Conclusion
@@ -518,6 +509,18 @@ count:false
 # Appendix
 
 ---
+name: app-objective-vs-subjective
+count: false
+## Objective vs. subjective Hispanic identity 
+
+- ## .brand-crawfest[**Subjective**] measure: self-reported Hispanic identity (e.g., CPS Hispanic origin question)
+  - Subject to measurement error and endogenous reporting bias .font50[.gray[**(Duncan and Trejo
+2007, 2011, 2017; Antman, Duncan, and Trejo 2020b)**]]
+
+- ## .brand-crawfest[**Objective**] measure: bases on the birthplace of the individual, their parents, and grandparents
+ - More objective following the works of Antman et al. (2016) and Duncan and Trejo (2007, 2011, 2017) .tiny[[[Back]](#endogenous-attrition-plot)]
+
+---
 name: app-sc-background
 count:false
 
@@ -563,6 +566,17 @@ count:false
   - More than 90&#37; of the deportees were Hispanic men (Mexico and other Central and South American countries)
 
 .tiny[.small[[[Back](#sc-rollout)]]]
+
+---
+name: app-countries
+count: false
+
+## Latin-American countries used in this analysis
+
+.tiny[[[Back](#objective-measures)]]
+
+<iframe src="assets/latin-america-countries-map.html" width="100%" height="500px" scrolling="no" style="border: none; border-radius: 8px;"></iframe>
+
 
 ---
 name: who-are-generations-ex1

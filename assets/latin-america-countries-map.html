@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Latin American Countries Map</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      background: #f7f8fa;
+      color: #1f2937;
+      overflow: hidden;
+    }
+
+    #wrap {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr auto;
+      gap: 8px;
+      padding: 8px;
+      box-sizing: border-box;
+      height: 100%;
+    }
+
+    #map {
+      width: 100%;
+      height: 100%;
+      min-height: 0;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      background: #eef2ff;
+    }
+
+    #caption {
+      font-size: 11px;
+      line-height: 1.25;
+      color: #374151;
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      padding: 6px 8px;
+    }
+  </style>
+</head>
+<body>
+  <div id="wrap">
+    <div id="map" aria-label="Map of Latin American countries"></div>
+    <div id="caption">
+      Included in analysis: Argentina, Bolivia, Brazil, Chile, Colombia, Costa Rica, Cuba, Dominican Republic,
+      Ecuador, El Salvador, Guatemala, Guyana, Suriname, French Guiana, Honduras, Mexico, Nicaragua,
+      Panama, Paraguay, Peru, Uruguay, and Venezuela.
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script>
+    (function () {
+      var map = L.map('map', {
+        zoomControl: true,
+        attributionControl: true
+      });
+
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 7,
+        minZoom: 2,
+        attribution: '&copy; OpenStreetMap contributors'
+      }).addTo(map);
+
+      var included = new Set([
+        'argentina', 'bolivia', 'brazil', 'chile', 'colombia', 'costa rica', 'cuba',
+        'dominican republic', 'ecuador', 'el salvador', 'guatemala', 'guyana',
+        'suriname', 'french guiana', 'honduras', 'mexico', 'nicaragua', 'panama',
+        'paraguay', 'peru', 'uruguay', 'venezuela'
+      ]);
+
+      var aliases = {
+        'venezuela, bolivarian republic of': 'venezuela',
+        'bolivia, plurinational state of': 'bolivia',
+        'brasil': 'brazil',
+        'mexico': 'mexico',
+        'french guiana': 'french guiana',
+        'guyana': 'guyana',
+        'suriname': 'suriname'
+      };
+
+      function normalizeName(name) {
+        var n = (name || '').toLowerCase().trim();
+        if (aliases[n]) {
+          return aliases[n];
+        }
+        return n;
+      }
+
+      function styleFor(feature) {
+        var props = feature.properties || {};
+        var rawName = props.name || props.ADMIN || props.admin || props.NAME || '';
+        var n = normalizeName(rawName);
+        var isIncluded = included.has(n);
+
+        return {
+          color: isIncluded ? '#1d4ed8' : '#9ca3af',
+          weight: isIncluded ? 1.4 : 0.6,
+          fillColor: isIncluded ? '#3b82f6' : '#e5e7eb',
+          fillOpacity: isIncluded ? 0.65 : 0.35
+        };
+      }
+
+      function onEachFeature(feature, layer) {
+        var props = feature.properties || {};
+        var label = props.name || props.ADMIN || props.admin || props.NAME || 'Unknown';
+        var n = normalizeName(label);
+        var status = included.has(n) ? 'Included' : 'Not included';
+        layer.bindTooltip(label + ' (' + status + ')', { sticky: true });
+      }
+
+      fetch('https://raw.githubusercontent.com/johan/world.geo.json/master/countries.geo.json')
+        .then(function (r) { return r.json(); })
+        .then(function (geojson) {
+          var layer = L.geoJSON(geojson, {
+            style: styleFor,
+            onEachFeature: onEachFeature
+          }).addTo(map);
+
+          map.fitBounds(layer.getBounds(), { padding: [20, 20] });
+
+          var southWest = L.latLng(-60, -125);
+          var northEast = L.latLng(35, -30);
+          map.setMaxBounds(L.latLngBounds(southWest, northEast));
+        })
+        .catch(function () {
+          var msg = document.createElement('div');
+          msg.style.padding = '12px';
+          msg.style.background = '#fee2e2';
+          msg.style.border = '1px solid #fecaca';
+          msg.style.borderRadius = '8px';
+          msg.style.color = '#991b1b';
+          msg.textContent = 'Could not load country boundaries. Check internet access and reload.';
+          document.getElementById('wrap').insertBefore(msg, document.getElementById('caption'));
+        });
+    })();
+  </script>
+</body>
+</html>

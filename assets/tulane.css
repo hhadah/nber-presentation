@@ -386,10 +386,11 @@ slides > slide {
 */
  
 .title-slide {
-  background-image: url(TulaneLogo-black.svg);
+  background-image: url(TulaneLogo-black.svg), url(MUR-white-wordmark.png);
   /* background-image: url(https://sydney.edu.au/etc/designs/corporate-commons/bower_components/corporate-frontend/dist/assets/img/TulaneLogo.svg); */
-  background-position: 10% 90%;
-  background-size: 320px;
+  background-position: 8% 90%, 43% 90%;
+  background-size: 300px, 250px;
+  background-repeat: no-repeat, no-repeat;
   background-color: #285c4d;
   text-align:left;
   vertical-align: top;
