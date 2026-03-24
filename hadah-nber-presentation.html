@@ -5,6 +5,7 @@
     <meta charset="utf-8" />
     <script src="hadah-nber-presentation_files/header-attrs/header-attrs.js"></script>
     <link href="hadah-nber-presentation_files/remark-css/default.css" rel="stylesheet" />
+    <script src="hadah-nber-presentation_files/xaringanExtra_fit-screen/fit-screen.js"></script>
     <script type="text/x-mathjax-config">
       MathJax.Hub.Config({
         TeX: { equationNumbers: { autoNumber: "AMS" } },
@@ -169,15 +170,15 @@ class: center, middle, inverse, title-slide
 </div>
 ]
 .date[
-### March 23 2026
+### March 24 2026
 ]
 
 ---
 
 layout: true
-&lt;div style="position: absolute;left:20px;bottom:5px;color:black;font-size: 12px;"&gt;Hussain Hadah (Murphy Institute/Tulane) | Immigration Enforcement and Hispanic Identity  | NBER March 23 2026&lt;/div&gt;
+&lt;div class="slide-footer" style="position: absolute;left:20px;bottom:5px;font-size: 12px;"&gt;Hussain Hadah (Murphy Institute/Tulane) | Immigration Enforcement and Hispanic Identity  | NBER March 24 2026&lt;/div&gt;
 
-&lt;!---  | 23 March 2026--&gt;
+&lt;!---  | 24 March 2026--&gt;
 
 ---
 
@@ -204,6 +205,10 @@ layout: true
         background-color: white;
     }
 &lt;/style&gt;
+
+
+
+
 ## The Hispanic and Latino populations are the largest minority groups in the U.S.
 
 &lt;br&gt;
@@ -230,7 +235,8 @@ layout: true
 
 - Previous studies argue that these questions reflect "self-identification" (i.e., subjective and endogenous measure)
 
-- So-called "objective" indicators of Hispanic descent have been proposed .font50[.gray[**(e.g., Duncan and Trejo (2007; 2009; 2011), and Antman, Duncan, and Trejo (2020b))**]]
+- "Objective" indicators of Hispanic descent have been proposed .font50[.gray[**(e.g., Duncan and Trejo (2007; 2009; 2011), and Antman, Duncan, and Trejo (2020b))**]]
+  - Based on birthplace of the individual, their parents, and grandparents
 
 ---
 name: endogenous-attrition-plot
@@ -255,11 +261,11 @@ US-born descendants of Hispanic immigrants tend to self-identify as non-Hispanic
   - .brand-crawfest[**Socioeconomic status**]: attritors are more educated, higher income .font50[.gray[**(Duncan
 and Trejo 2011, 2017)**]]
   - .brand-crawfest[**Local prejudice**]: State-level anti-Hispanic bias reduces Hispanic identity .font50[.gray[**(Hadah 2024)**]]
-    - State-level bias is measured based on Implicit Association Test data
 
 - If Hispanic attritors are positively selected,
-  - conventional estimates overstate Hispanic health disparities .font50[.gray[**(Antman, Duncan, and Trejo (2016; 2020b))**]]
-  - standard measures understate intergenerational educational progress .font50[.gray[**(Duncanand Trejo 2011, 2017)**]]
+  - Conventional estimates overstate Hispanic health disparities .font50[.gray[**(Antman, Duncan, and Trejo (2016; 2020b))**]]
+  - Standard measures understate intergenerational educational progress and assimilation .font50[.gray[**(Duncanand Trejo 2011, 2017)**]]
+  - Ethnic gaps in labor market overstate the extent of discrimination in the most biased states .font50[.gray[**(Hadah 2024)**]]
 
 - .brand-crawfest[**Open question: Can policies that disproportionately affect Hispanics causally change ethnic self-identification?**]
 
@@ -291,6 +297,20 @@ name: sc-rollout
 ]
 
 .footnotesize[Share of counties with SC (left axis) and monthly removals (right axis), 2008--2013.] .tiny[[[SC facts]](#app-sc-facts)]
+
+---
+name: data-sample
+
+## Data and sample
+
+- Current Population Survey (CPS), 2003 to 2013
+  - Self-reported Hispanic origin, race, ancestry, parental birthplace .tiny[[[Summary statistics](#app-summary)]]
+
+- **Sample**: Children under 18 living with parents
+  - Focus on White families: lower switching costs, more feasible to "pass"
+  - Focus on children lets us define objective Hispanic indicators beyond 2nd gen
+
+- **Outcome**: Self-reported Hispanic identity across ancestry-based Hispanic identity generations
 
 ---
 name: objective-measures
@@ -333,34 +353,6 @@ graph LR
 .center[
 .tiny[[[Latin-American countries used]](#app-countries) [[Example 1]](#who-are-generations-ex1) [[Example 2]](#who-are-generations-ex2)]
 ]
-
-
-
----
-## But how would SC impact self-reporting of Hispanic identity?
-
-- SC may increase the salience and expected costs of being treated as Hispanic
-- Two competing channels:
-  1. .brand-crawfest[**Attrition channel**]: increased expected penalty `\(\Rightarrow\)` individuals distance from Hispanic identity to reduce perceived exposure
-  2. .brand-crawfest[**Reactive identity channel**]: heightened threat `\(\Rightarrow\)` increased value of in-group attachment and solidarity
-
-- Net effect is .brand-crawfest[**theoretically ambiguous**] and likely .brand-crawfest[**heterogeneous**]
-  - Depends on switching costs, perceived exposure, generational ties
-
----
-name: data-sample
-
-## Data and sample
-
-- Current Population Survey (CPS), 2003 to 2013
-  - Self-reported Hispanic origin, race, ancestry, parental birthplace .tiny[[[Summary statistics](#app-summary)]]
-
-- **Sample**: White children under 18 living with parents
-  - Focus on White families: lower switching costs, more feasible to "pass"
-  - Focus on children lets us define objective Hispanic indicators beyond 2nd gen
-  - Parental reporting tends to understate rather than exaggerate ethnic attrition .font50[.gray[**(Antman, Duncan, and Trejo (2020a))**]]
-
-- **Outcome**: Self-reported Hispanic identity across ancestry-based Hispanic identity generations
 
 ---
 ## Empirical Strategy
@@ -505,15 +497,25 @@ Third gen: .red[&amp;minus;9.3 pp] (attrition)
 .footnotesize[Robustness estimates exclude southern border counties and NY, MA, and IL. Results remain unchanged.]
 
 ---
+name: conclusion-slide
+
 ## Conclusion
 
-- Immigration enforcement causally changes Hispanic ethnic self-identification
+- #### Immigration enforcement causally changes Hispanic ethnic self-identification
 
-- Enforcement operates through dual channels:
-  - **Attrition**: 1st and 3rd generation families retreat from Hispanic identity
-  - **Solidarity response**: 2nd generation families increase identification (driven by interethnic families)
+  - ##### .brand-azalea[Reduced] Hispanic identity among first and third generation Hispanic children
 
-- Methodological implication: Self-reported Hispanic identity in evaluations of immigration enforcement may systematically bias causal inference
+  - ##### .brand-blue[Increased] Hispanic identity among second generation Hispanic children .tiny[[[Mechanisms]](#app-mechanisms)]
+
+--
+
+### Implications
+
+- #### Political representation of Hispanics may be affected
+
+- #### Self-reported Hispanic identity in evaluations of immigration enforcement may systematically bias causal inference
+  - ##### .brand-blue[Overestimating] disparities between Hispanics and non-Hispanic whites
+  - ##### .brand-azalea[Underestimating] intergenerational progress and assimilation of Hispanic immigrants
 
 ---
 class: tulane-blue
@@ -578,7 +580,7 @@ count:false
   - 2021: Joe Biden discontinued Secure Communities
   - 2025: Donald Trump reinstated Secure Communities
 
-.tiny[.small[[[Back](#motivation)]]]
+.tiny[.small[[[Back]](#motivation)]]
 
 ---
 name: app-sc-work
@@ -593,7 +595,7 @@ count:false
   3. If match found `\(\rightarrow\)` ICE reviews immigration status
   4. If violation identified `\(\rightarrow\)` ICE issues detainer (hold up to 48 hours)
 
-.tiny[.small[[[Back](#motivation)]]]
+.tiny[.small[[[Back]](#motivation)]]
 
 ---
 name: app-sc-facts
@@ -608,15 +610,13 @@ count:false
   - ~440,000 deportations
   - More than 90&amp;#37; of the deportees were Hispanic men (Mexico and other Central and South American countries)
 
-.tiny[.small[[[Back](#sc-rollout)]]]
+.tiny[.small[[[Back]](#sc-rollout)]]
 
 ---
 name: app-countries
 count: false
 
-## Latin-American countries used in this analysis
-
-.tiny[[[Back](#objective-measures)]]
+## Latin-American countries used in this analysis .tiny[[[Back]](#objective-measures)]
 
 &lt;iframe src="assets/latin-america-countries-map.html" width="100%" height="500px" scrolling="no" style="border: none; border-radius: 8px;"&gt;&lt;/iframe&gt;
 
@@ -659,7 +659,7 @@ count: false
 ]
 ]
 
-.tiny[[[Back](#objective-measures)]]
+.tiny[[[Back]](#objective-measures)]
 
 ---
 name: who-are-generations-ex2
@@ -682,7 +682,7 @@ count: false
 .bold[.brand-green[3rd Generation]]
 ]
 
-.tiny[[[Back](#objective-measures)]]
+.tiny[[[Back]](#objective-measures)]
 
 ---
 name: app-summary
@@ -706,8 +706,23 @@ count:false
 
 .footnotesize[Note: CPS 2003--2013. White children ages &amp;le; 17] 
 
-.tiny[.pull-right[.small[[[Back](#data-sample)]]]]
+.tiny[.pull-right[.small[[[Back]](#data-sample)]]]
 
+---
+name: app-mechanisms
+count:false
+
+## But how would SC impact self-reporting of Hispanic identity?
+
+- SC may increase the salience and expected costs of being treated as Hispanic
+- Two competing channels:
+  1. .brand-crawfest[**Attrition channel**]: increased expected penalty `\(\Rightarrow\)` individuals distance from Hispanic identity to reduce perceived exposure
+  2. .brand-crawfest[**Reactive identity channel**]: heightened threat `\(\Rightarrow\)` increased value of in-group attachment and solidarity
+
+- Net effect is .brand-crawfest[**theoretically ambiguous**] and likely .brand-crawfest[**heterogeneous**]
+  - Depends on switching costs, perceived exposure, generational ties
+  
+[[Back]](#conclusion-slide)
 
 
     </textarea>

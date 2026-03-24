@@ -84,7 +84,18 @@ To specify the margin of the first title h1
 .inverse .remark-slide-number {
   display: none;
 }
-.inverse div[style*="position: absolute"] {
+.slide-footer {
+  color: black;
+}
+
+.inverse .slide-footer,
+.tulane-blue .slide-footer,
+.tulane-yellow .slide-footer,
+.tulane-green .slide-footer,
+.tulane-crawfest .slide-footer,
+.segue .slide-footer,
+.segue-green .slide-footer,
+.segue-yellow .slide-footer {
   color: white !important;
 }
 /* background colour classes */
