@@ -1,5 +1,6 @@
 ---
 title: "Immigration Enforcement and Hispanic Identity"
+subtitle: "NBER Economics of Race and Stratification"
 author: |
   Hussain Hadah<sup>1,2</sup> and Augustine Denteh<sup>3</sup>
   <br>
@@ -236,18 +237,20 @@ name: motivation
 
 ## What we study in this paper
 
+
 <br>
 
-- Policy context: .brand-crawfest[**Secure Communities (SC)**]
+- .font120[Policy context: .brand-crawfest[**Secure Communities (SC)**]]
   - Automated fingerprint sharing between local police and federal immigration authorities .tiny[[[Secure Communities background]](#app-sc-background) [[How SC works]](#app-sc-work)]
+
 <br>
 
-- Growing literature documents *spillover effects* on Hispanic community
+- .font120[Growing literature documents *spillover effects* on Hispanic community]
   - Safety net participation, poverty, engagement with institutions, suicide .font50[.gray[**(Watson 2014; Amuedo-Dorantes, Arenas-Arroyo, and Sevilla 2018; Dee and Murphy 2020; Alsan and Yang 2024; Hadah 2025)**]]
 
 <br>
 
-- .brand-crawfest[**Does immigration enforcement (Secure Communities) change who identifies/self-reports as Hispanic?**]
+- .font120[.brand-crawfest[**Does immigration enforcement (Secure Communities) change who identifies/self-reports as Hispanic?**]]
 
 ---
 name: sc-rollout
@@ -257,8 +260,6 @@ name: sc-rollout
 .center[
 <img src="figures/sc_removal.png" width="85%"/>
 ]
-
-.footnotesize[Share of counties with SC (left axis) and monthly removals (right axis), 2008--2013.] .tiny[[[SC facts]](#app-sc-facts)]
 
 ---
 name: objective-measures
@@ -427,9 +428,7 @@ Third gen: .red[&minus;9.3 pp] (attrition)
 ---
 name: conclusion-slide
 
-## Conclusion
-
-- #### Immigration enforcement causally changes Hispanic ethnic self-identification
+## Immigration enforcement causally changes Hispanic ethnic self-identification
 
   - ##### .brand-blue[Increased] Hispanic attrition among first and third generation Hispanic children
 
