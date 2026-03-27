@@ -202,7 +202,7 @@ name: endogenous-attrition-plot
 .pull-left-narrow[
 
 US-born descendants of Hispanic immigrants tend to self-identify as non-Hispanic .font50[.gray[**(Duncan and Trejo
-2007, 2011, 2017; Antman, Duncan, and Trejo 2020b)**]] .tiny[[[Objective vs. subjective Hispanic identity]](#app-objective-vs-subjective)]
+2007, 2011, 2017; Antman, Duncan, and Trejo 2020b)**]] .tiny[[[Objective vs. subjective Hispanic identity]](#app-objective-vs-subjective)[[Data and sample]](#data-sample)]
 ]
 
 .pull-right-wide[
@@ -219,15 +219,15 @@ grid.raster(plot1)
 ## What causes Hispanic attrition?
 
 - Correlates of ethnic attrition are well documented:
-  - .brand-crawfest[**Intermarriage**]: primary driver; children of interethnic marriages are far more likely to attrit .font50[.gray[**(Duncan and Trejo 2011)**]]
-  - .brand-crawfest[**Socioeconomic status**]: attritors are more educated, higher income .font50[.gray[**(Duncan
+  - .font80[.brand-crawfest[**Intermarriage**]: primary driver; children of interethnic marriages are far more likely to attrit .font50[.gray[**(Duncan and Trejo 2011)**]]]
+  - .font80[.brand-crawfest[**Socioeconomic status**]: attritors are more educated, higher income .font50[.gray[**(Duncan]
 and Trejo 2011, 2017)**]]
-  - .brand-crawfest[**Local prejudice**]: State-level anti-Hispanic bias reduces Hispanic identity .font50[.gray[**(Hadah 2024)**]]
+  - .font80[.brand-crawfest[**Local prejudice**]: State-level anti-Hispanic bias reduces Hispanic identity .font50[.gray[**(Hadah 2024)**]]]
 
 - If Hispanic attritors are positively selected,
-  - Conventional estimates overstate Hispanic health disparities .font50[.gray[**(Antman, Duncan, and Trejo (2016; 2020b))**]]
-  - Standard measures understate intergenerational educational progress and assimilation .font50[.gray[**(Duncanand Trejo 2011, 2017)**]]
-  - Ethnic gaps in labor market overstate the extent of discrimination in the most biased states .font50[.gray[**(Hadah 2024)**]]
+  - .font80[Conventional estimates overstate Hispanic health disparities .font50[.gray[**(Antman, Duncan, and Trejo (2016; 2020b))**]]]
+  - .font80[Standard measures understate intergenerational educational progress and assimilation .font50[.gray[**(Duncanand Trejo 2011, 2017)**]]]
+  - .font80[Ethnic gaps in labor market overstate the extent of discrimination in the most biased states .font50[.gray[**(Hadah 2024)**]]]
 
 - .brand-crawfest[**Open question: Can policies that disproportionately affect Hispanics causally change ethnic self-identification?**]
 
@@ -259,20 +259,6 @@ name: sc-rollout
 ]
 
 .footnotesize[Share of counties with SC (left axis) and monthly removals (right axis), 2008--2013.] .tiny[[[SC facts]](#app-sc-facts)]
-
----
-name: data-sample
-
-## Data and sample
-
-- Current Population Survey (CPS), 2003 to 2013
-  - Self-reported Hispanic origin, race, ancestry, parental birthplace .tiny[[[Summary statistics](#app-summary)]]
-
-- **Sample**: Children under 18 living with parents
-  - Focus on White families: lower switching costs, more feasible to "pass"
-  - Focus on children lets us define objective Hispanic indicators beyond 2nd gen
-
-- **Outcome**: Self-reported Hispanic identity across ancestry-based Hispanic identity generations
 
 ---
 name: objective-measures
@@ -665,6 +651,23 @@ count:false
   - Depends on switching costs, perceived exposure, generational ties
   
 [[Back]](#conclusion-slide)
+
+---
+name: data-sample
+count:false
+
+## Data and sample
+
+- Current Population Survey (CPS), 2003 to 2013
+  - Self-reported Hispanic origin, race, ancestry, parental birthplace .tiny[[[Summary statistics](#app-summary)]]
+
+- **Sample**: Children under 18 living with parents
+  - Focus on White families: lower switching costs, more feasible to "pass"
+  - Focus on children lets us define objective Hispanic indicators beyond 2nd gen
+
+- **Outcome**: Self-reported Hispanic identity across ancestry-based Hispanic identity generations
+
+[[Back]](#objective-measures)
 
 ```{r gen_pdf, include = FALSE, cache = FALSE, eval = TRUE}
 library(renderthis)
